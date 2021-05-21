@@ -118,7 +118,7 @@ function adicionaDados() {
     /*axios.post('https://materializecopy.herokuapp.com/user/busca', {
         country: country.toLowerCase()
     })*/
-    axios.get(`https://materializecopy.herokuapp.com/user/busca`, {
+    axios.get(`https://materializecopy.herokuapp.com/user/post`, {
       params: {
         country: countryField.value
       }
