@@ -38,6 +38,7 @@ button_register.addEventListener('click', (event) => {
     })
     .then(res => {
       console.log(res.status)
+      content.innerHTML = ''
       if(res.status === 200){
         createLineLogin("Cadastrado realizado com sucesso!")
         containerLogin.classList.remove('sign-up-mode')
