@@ -118,17 +118,21 @@ function adicionaDados() {
     /*axios.post('https://materializecopy.herokuapp.com/user/busca', {
         country: country.toLowerCase()
     })*/
-    axios.get('https://materializecopy.herokuapp.com/user/busca')
-    .then(res => {
-      for(const i in res.data){
-        if(res.data[i].country === country){
-          content.innerHTML = ''
-          createLine(`País: ${res.data.country}`)
-          createLine(`Casos confirmados: ${res.data.confirmed}`)
-          createLine(`Casos Recuperados: ${res.data.recovered}`)
-          createLine(`Mortes: ${res.data.deaths}`)
-        }
+    axios.get(`https://materializecopy.herokuapp.com/user/busca`, {
+      params: {
+        country: countryField.value
       }
+    })
+    .then(res => {
+      //for(const i in res.data){
+        //if(res.data[i].country === country){
+      content.innerHTML = ''
+      createLine(`País: ${res.data.country}`)
+      createLine(`Casos confirmados: ${res.data.confirmed}`)
+      createLine(`Casos Recuperados: ${res.data.recovered}`)
+      createLine(`Mortes: ${res.data.deaths}`)
+        //}
+      //}
     })
     .catch(err => {
       content.innerHTML = ''
