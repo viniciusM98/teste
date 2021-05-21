@@ -61,7 +61,7 @@ button_login.addEventListener('click', async(event) => {
 
   console.log(email_login.value, passw.value)
 
-  await axios.post('/auth/authenticate', {
+  await axios.post('https://materializecopy.herokuapp.com/auth/authenticate', {
       email: email_login.value,
       password: passw.value
     })
