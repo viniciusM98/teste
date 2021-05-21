@@ -22,10 +22,10 @@ button_post.addEventListener('click', async(event) => {
 
   if(country_field.value !== '' && confirmed_field.value !== '' && recovered_field.value !== '' && deaths_field.value !== ''){
     await axios.post('https://materializecopy.herokuapp.com/user/post', {
-    country: country_field.value,
-    confirmed: confirmed_field.value,
-    recovered: recovered_field.value,
-    deaths: deaths_field.value
+      country: country_field.value,
+      confirmed: confirmed_field.value,
+      recovered: recovered_field.value,
+      deaths: deaths_field.value
     })
     .then(res => {
       
@@ -113,9 +113,10 @@ function adicionaDados() {
   if(country.length > 3){
 
     console.log(country.toLowerCase())
-    axios.post('https://materializecopy.herokuapp.com/user/busca', {
+    /*axios.post('https://materializecopy.herokuapp.com/user/busca', {
         country: country.toLowerCase()
-    })
+    })*/
+    axios.get('https://materializecopy.herokuapp.com/user/busca')
     .then(res => {
       content.innerHTML = ''
       createLine(`País: ${res.data.country}`)
