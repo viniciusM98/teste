@@ -43,6 +43,9 @@ button_register.addEventListener('click', (event) => {
         containerLogin.classList.remove('sign-up-mode')
       }
     })
+    .catch(err => {
+      createLineLogin("Email ou senha vazios")
+    })
   }else {
     createLineLogin("Email ou senha vazios")
   }
