@@ -20,38 +20,43 @@ const overlay = document.getElementById('overlay')
 button_post.addEventListener('click', async(event) => {
   event.preventDefault();
 
-  let cont = 1;
-  await axios.post('https://materializecopy.herokuapp.com/user/post', {
+  if(country_field.value !== '' && confirmed_field.value !== '' && recovered_field.value !== '' && deaths_field.value !== ''){
+    await axios.post('https://materializecopy.herokuapp.com/user/post', {
     country: country_field.value,
     confirmed: confirmed_field.value,
     recovered: recovered_field.value,
     deaths: deaths_field.value
-  })
-  .then(res => {
-    
-    console.log(res.status)
-    
-    if(res.status === 200){
+    })
+    .then(res => {
+      
+      console.log(res.status)
+      
+      if(res.status === 200){
+        country_field.value = ''
+        confirmed_field.value = ''
+        recovered_field.value = ''
+        deaths_field.value = ''
+        advertising.innerHTML = ''
+      }else{
+        country_field.innerHTML = ''
+        confirmed_field.innerHTML = ''
+        recovered_field.innerHTML = ''
+        deaths_field.innerHTML = ''
+        advertising.innerHTML = ''
+        createLinePub("ERRO!")
+      }
+    }).catch(err => {
       country_field.value = ''
       confirmed_field.value = ''
       recovered_field.value = ''
       deaths_field.value = ''
-    }else{
-      country_field.innerHTML = ''
-      confirmed_field.innerHTML = ''
-      recovered_field.innerHTML = ''
-      deaths_field.innerHTML = ''
-      createLinePub("ERRO!")
-    }
-  }).catch(err => {
-    country_field.value = ''
-    confirmed_field.value = ''
-    recovered_field.value = ''
-    deaths_field.value = ''
-    cont++;
-    createLinePub("Pais ja cadastrado")
-    advertising.p = ''
-  })
+      createLinePub("Pais ja cadastrado")
+      advertising.innerHTML = ''
+    })
+  }else{
+    createLinePub("Algum campo está vazio")
+  }
+  
 })
 
 openModalButtons.forEach(button => {
