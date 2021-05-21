@@ -36,13 +36,13 @@ button_post.addEventListener('click', async(event) => {
         confirmed_field.value = ''
         recovered_field.value = ''
         deaths_field.value = ''
-        advertising.innerHTML = ''
+        advertising.p.value = ''
       }else{
         country_field.innerHTML = ''
         confirmed_field.innerHTML = ''
         recovered_field.innerHTML = ''
         deaths_field.innerHTML = ''
-        advertising.innerHTML = ''
+        advertising.p.value = ''
         createLinePub("ERRO!")
       }
     }).catch(err => {
@@ -51,7 +51,7 @@ button_post.addEventListener('click', async(event) => {
       recovered_field.value = ''
       deaths_field.value = ''
       createLinePub("Pais ja cadastrado")
-      advertising.innerHTML = ''
+      advertising.p.value = ''
     })
   }else{
     createLinePub("Algum campo está vazio")
