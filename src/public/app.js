@@ -20,7 +20,7 @@ const overlay = document.getElementById('overlay')
 button_post.addEventListener('click', async(event) => {
   event.preventDefault();
 
-  console.log('entrei aqui')
+  let cont = 1;
   await axios.post('https://materializecopy.herokuapp.com/user/post', {
     country: country_field.value,
     confirmed: confirmed_field.value,
@@ -28,6 +28,7 @@ button_post.addEventListener('click', async(event) => {
     deaths: deaths_field.value
   })
   .then(res => {
+    
     console.log(res.status)
     
     if(res.status === 200){
@@ -47,7 +48,9 @@ button_post.addEventListener('click', async(event) => {
     confirmed_field.value = ''
     recovered_field.value = ''
     deaths_field.value = ''
+    cont++;
     createLinePub("Pais ja cadastrado")
+    advertising.p = ''
   })
 })
 

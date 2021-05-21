@@ -31,17 +31,21 @@ sign_out_btn.addEventListener('click', () => {
 button_register.addEventListener('click', (event) => {
   event.preventDefault()
 
-  axios.post('https://materializecopy.herokuapp.com/auth/register', {
-    email: email.value,
-    password: password.value
-  })
-  .then(res => {
-    console.log(res.status)
-    if(res.status === 200){
-      createLineLogin("Cadastrado realizado com sucesso!")
-      containerLogin.classList.remove('sign-up-mode')
-    }
-  })
+  if(password.value !== null || email.value !== null){
+    axios.post('https://materializecopy.herokuapp.com/auth/register', {
+      email: email.value,
+      password: password.value
+    })
+    .then(res => {
+      console.log(res.status)
+      if(res.status === 200){
+        createLineLogin("Cadastrado realizado com sucesso!")
+        containerLogin.classList.remove('sign-up-mode')
+      }
+    })
+  }else {
+    createLineLogin("Email ou senha vazios")
+  }
 })
 
 button_login.addEventListener('click', async(event) => {
