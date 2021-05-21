@@ -32,7 +32,7 @@ router.get('/busca', async (req, res) => {
         else{
             return res.status(400).send({error: 'Pais nao encontrado'});
         }*/
-        res.send(Covid)
+        return res.send(Covid)
 
     }catch(err){
         console.log(err)
