@@ -127,10 +127,10 @@ function adicionaDados() {
       //for(const i in res.data){
         //if(res.data[i].country === country){
       content.innerHTML = ''
-      createLine(`País: ${res.data.country}`)
-      createLine(`Casos confirmados: ${res.data.confirmed}`)
-      createLine(`Casos Recuperados: ${res.data.recovered}`)
-      createLine(`Mortes: ${res.data.deaths}`)
+      createLine(`País: ${res.query.country}`)
+      createLine(`Casos confirmados: ${res.query.confirmed}`)
+      createLine(`Casos Recuperados: ${res.query.recovered}`)
+      createLine(`Mortes: ${res.query.deaths}`)
         //}
       //}
     })
