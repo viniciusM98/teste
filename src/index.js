@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
-app.use('/public', express.static(path.join(__dirname, 'public')))
+app.use('/views/public', express.static(path.join(__dirname, 'public')))
 app.set('views', path.join(__dirname, 'views'))
 
 app.use(session({
@@ -39,4 +39,4 @@ app.get('/login', (req, res) =>{
 require('./controllers/projectController')(app);
 require('./controllers/authController')(app);
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
