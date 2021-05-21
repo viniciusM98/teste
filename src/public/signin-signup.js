@@ -31,7 +31,7 @@ sign_out_btn.addEventListener('click', () => {
 button_register.addEventListener('click', (event) => {
   event.preventDefault()
 
-  axios.post('http://localhost:3000/auth/register', {
+  axios.post('https://teste-materialize.herokuapp.com/auth/register', {
     email: email.value,
     password: password.value
   })
