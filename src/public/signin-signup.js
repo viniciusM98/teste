@@ -31,7 +31,7 @@ sign_out_btn.addEventListener('click', () => {
 button_register.addEventListener('click', (event) => {
   event.preventDefault()
 
-  axios.post('https://teste-materialize.herokuapp.com/auth/register', {
+  axios.post('https://60a7c2bbac7fc11d976cd5ee--cocky-wilson-1ebc65.netlify.app/auth/register', {
     email: email.value,
     password: password.value
   })
