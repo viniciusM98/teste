@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/materialize.svg"></link>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/styles/style.css">
+    <link rel="stylesheet" href="../public/styles/style_login.css">
+    <script src="https://kit.fontawesome.com/62b0267b03.js" crossorigin="anonymous"></script>
+    <title>COVID 19 - Materialize</title>
+  </head>
+  <body>
+    <div class="materialize-visualization">
+      <header>
+        <section>
+          <input type="checkbox" id="check">
+          <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+          </label>
+          <div class="sidebar">
+            <ul>
+              <li class="logo"><a href="./home.html"><img src="../public/images/materialize.svg" alt="Materialize Icon"></a></li>
+              <li class="version"><a href="" class="version-link">
+                1.0.0
+                <i class="fas fa-caret-down"></i>
+              </a></li>
+              <li class="search">
+                <input type="search" id="input-zip" class="search-input" placeholder="Digite o país (Inglês)">
+                <a id="search-btn" data-modal-target="#zip-code-modal" href=""><i class="fas fa-search"></i></a>
+              </li>
+              <li class="text-menu"><a href="">About</a></li>
+              <li class="text-menu"><a href="">Getting Started</a></li>
+              <li class="text-menu"><a href="">CSS</a></li>
+              <li class="text-menu"><a href="">Components</a></li>
+              <li class="text-menu"><a href="">JavaScript</a></li>
+              <li class="text-menu"><a href="">Forms</a></li>
+              <li class="text-menu"><a href="">Mobile</a></li>
+              <li class="text-menu"><a href="">Showcase</a></li>
+              <li class="text-menu"><a href="">Themes</a></li>
+            </ul>
+            <div class="sponsor">SPONSOR</div>
+            <div class="fine_proxy">
+              <a href=""><img src="../public/images/fineproxy.png" alt="Fine Proxy"></a>
+            </div>
+          </div>
+        </section>
+      </header>
+      <main>
+        <section class="main-section">
+          <div class="container">
+            <div class="titles-center">
+              <div class="title">
+                <h1>Materialize</h1>
+              </div>
+              <div class="sub-title">
+                <h2>A modern responsive front-end framework based on Material Design</h2>
+              </div>
+            </div>
+            <div class="row-content">
+              <a href="" id="get-button">
+                <button class="get-started">GET STARTED</button>
+              </a>
+              <a href="" id="upgrade-button">
+                <button class="upgrade">UPGRADE FROM 0.100.2</button>
+              </a>
+            </div>
+            <div class="row-content">
+              <a href="" class="release-content">Release: 1.0.0</a>
+            </div>
+            <div class="row-content">
+              <div class="advertising">
+                <form action="">
+                  <input id="country" type="text" placeholder="Country" name="country" required>
+                  <input id="confirmed" type="text" placeholder="Confirmed cases" name="confirmed" required>
+                  <input id="recovered" type="text" placeholder="Recovered cases" name="recovered" required>
+                  <input id="deaths" type="text" placeholder="Deaths" name="deaths" required>
+                  <button id="post-button">POST</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="github-container">
+            <div class="container">
+              <div class="row-content">
+                <div class="commit">Latest Commit on Github: 
+                  <a href="" class="number">824e78248b3de81e383445e76ffb04cc3264fe7d</a>
+                  <span class="date">9 months ago</span>
+                  <a class="github-button"><button class="git-but">SAIR</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div id="zip-code-modal" class="zip-code-modal">
+          <div class="modal-header">
+            <div class="modal-title"></div>
+            <a class="close-button" data-close-button><i class="fas fa-window-close"></i></a>
+          </div>
+          <div class="modal-main"></div>
+        </div>
+        <div id="overlay"></div>
+      </main>
+    </div>
+    <div class="login-visualization">
+      <div class="container-login">
+        <div class="forms-container">
+          <div id="signin-signup" class="signin-signup">
+            <form action="" class="sign-in-form">
+              <h2 class="title">Sign in</h2>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input type="text" id="user-login" placeholder="E-mail" >
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password-login" placeholder="Password" >
+              </div>
+              <input type="submit" id="button-login" value="Login" class="btn solid">
+  
+              <p class="social-text">Or Sign in with social platforms</p>
+              <div class="social-media">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+
+            </form>
+  
+            <form action="" class="sign-up-form">
+              <h2 class="title">Sign up</h2>
+              <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input id="email-su" type="text" placeholder="Email" name="email" required>
+              </div>
+              <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input id="password-su" type="password" placeholder="Password" name="password" required>
+              </div>
+             <input type="submit" value="Sign Up" id="button-su" class="btn solid" required>
+  
+              <p class="social-text">Or Sign up with social platforms</p>
+              <div id="#social-m" class="social-media">
+                <a href="#" class="social-icon">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-google"></i>
+                </a>
+                <a href="#" class="social-icon">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+  
+        <div class="panels-container">
+          <div class="panel left-panel">
+            <div class="content">
+              <h3>New here ?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit dignissimos necessitatibus illo quae officia natus corporis error voluptatibus adipisci, accusantium, suscipit vel sint mollitia nisi sunt corrupti sequi. Quis, quos!</p>
+              <button class="btn transparent" id="sign-up-btn">Sign up</button>
+            </div>
+  
+            <img src="../public/images/materialize.svg" class="image" alt="">
+          </div>
+  
+          <div class="panel right-panel">
+            <div class="content">
+              <h3>One of us ?</h3>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit dignissimos necessitatibus illo quae officia natus corporis error voluptatibus adipisci, accusantium, suscipit vel sint mollitia nisi sunt corrupti sequi. Quis, quos!</p>
+              <button class="btn transparent" id="sign-in-btn">Sign in</button>
+            </div>
+  
+            <img src="../public/images/materialize.svg" class="image" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../public/app.js"></script>
+    <script src="../public/signin-signup.js"></script>
+  </body>
+</html>
