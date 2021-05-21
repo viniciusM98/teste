@@ -20,19 +20,19 @@ router.post('/post', async (req, res) => {
 })
 
 router.get('/busca', async (req, res) => {
-    const {country} = req.body;
-    console.log("entrei1")
+    //const {country} = req.body;
+    //console.log("entrei1")
     try{
-        console.log(req.body)
-        console.log("entrei2")
-
-        if(await Covid.findOne({country})){
+        //console.log(req.body)
+        //console.log("entrei2")
+        /*if(await Covid.findOne({country})){
             const resposta = await Covid.findOne({country})
             return res.send({country: resposta.country, confirmed: resposta.confirmed, recovered: resposta.recovered, deaths: resposta.deaths});
         }
         else{
             return res.status(400).send({error: 'Pais nao encontrado'});
-        }
+        }*/
+        res.send(Covid)
 
     }catch(err){
         console.log(err)

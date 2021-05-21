@@ -1,3 +1,5 @@
+const { response } = require("express")
+
 const button = document.querySelector('#search-btn')
 const buttonClose = document.querySelector('#close-button')
 const countryField = document.querySelector('#input-zip')
@@ -118,11 +120,15 @@ function adicionaDados() {
     })*/
     axios.get('https://materializecopy.herokuapp.com/user/busca')
     .then(res => {
-      content.innerHTML = ''
-      createLine(`País: ${res.data.country}`)
-      createLine(`Casos confirmados: ${res.data.confirmed}`)
-      createLine(`Casos Recuperados: ${res.data.recovered}`)
-      createLine(`Mortes: ${res.data.deaths}`)
+      for(const i in res.data){
+        if(res.data[i].country === country){
+          content.innerHTML = ''
+          createLine(`País: ${res.data.country}`)
+          createLine(`Casos confirmados: ${res.data.confirmed}`)
+          createLine(`Casos Recuperados: ${res.data.recovered}`)
+          createLine(`Mortes: ${res.data.deaths}`)
+        }
+      }
     })
     .catch(err => {
       content.innerHTML = ''
