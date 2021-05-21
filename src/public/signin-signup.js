@@ -31,7 +31,7 @@ sign_out_btn.addEventListener('click', () => {
 button_register.addEventListener('click', (event) => {
   event.preventDefault()
 
-  if(password.value !== '' || email.value !== ''){
+  if(password.value !== '' && email.value !== ''){
     axios.post('https://materializecopy.herokuapp.com/auth/register', {
       email: email.value,
       password: password.value
@@ -45,7 +45,7 @@ button_register.addEventListener('click', (event) => {
       }
     })
     .catch(err => {
-      createLineLogin("Email ou senha vazios")
+      createLineLogin("ERRO")
     })
   }else {
     createLineLogin("Email ou senha vazios")
