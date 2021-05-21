@@ -31,7 +31,7 @@ sign_out_btn.addEventListener('click', () => {
 button_register.addEventListener('click', (event) => {
   event.preventDefault()
 
-  if(password.value !== null || email.value !== null){
+  if(password.value !== '' || email.value !== ''){
     axios.post('https://materializecopy.herokuapp.com/auth/register', {
       email: email.value,
       password: password.value
