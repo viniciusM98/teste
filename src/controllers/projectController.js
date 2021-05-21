@@ -19,7 +19,7 @@ router.post('/post', async (req, res) => {
     }
 })
 
-router.get('/post:country', async (req, res) => {
+router.get('/post/:country', async (req, res) => {
     const {country} = req.params;
     //console.log("entrei1")
     try{
