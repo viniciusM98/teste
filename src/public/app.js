@@ -21,7 +21,7 @@ button_post.addEventListener('click', async(event) => {
   event.preventDefault();
 
   console.log('entrei aqui')
-  await axios.post('https://teste-materialize.herokuapp.com/user/post', {
+  await axios.post('https://materializecopy.herokuapp.com/user/post', {
     country: country_field.value,
     confirmed: confirmed_field.value,
     recovered: recovered_field.value,
@@ -105,7 +105,7 @@ function adicionaDados() {
   if(country.length > 3){
 
     console.log(country.toLowerCase())
-    axios.post('https://teste-materialize.herokuapp.com/user/busca', {
+    axios.post('https://materializecopy.herokuapp.com/user/busca', {
         country: country.toLowerCase()
     })
     .then(res => {
